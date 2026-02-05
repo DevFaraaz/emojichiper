@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Emoji Cipher - Playful encryption app design system */
+
+@layer base {
+  :root {
+    --background: 30 50% 98%;
+    --foreground: 25 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 15%;
+
+    --primary: 15 90% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 95% 65%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 30 30% 94%;
+    --muted-foreground: 25 15% 50%;
+
+    --accent: 350 85% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 30 30% 88%;
+    --input: 30 30% 88%;
+    --ring: 15 90% 60%;
+
+    --radius: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(15 90% 60%) 0%, hsl(40 95% 65%) 100%);
+    --gradient-bg: linear-gradient(180deg, hsl(30 50% 98%) 0%, hsl(35 60% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(30 40% 98%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(15 90% 60% / 0.15) 0%, transparent 50%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(25 30% 20% / 0.06);
+    --shadow-md: 0 4px 20px hsl(25 30% 20% / 0.1);
+    --shadow-lg: 0 8px 40px hsl(25 30% 20% / 0.12);
+    --shadow-glow: 0 0 30px hsl(15 90% 60% / 0.3);
+  }
+
+  .dark {
+    --background: 25 20% 10%;
+    --foreground: 30 30% 95%;
+    --card: 25 20% 14%;
+    --card-foreground: 30 30% 95%;
+    --popover: 25 20% 14%;
+    --popover-foreground: 30 30% 95%;
+    --primary: 15 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 30 20% 60%;
+    --accent: 350 75% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 145 55% 40%;
+    --success-foreground: 0 0% 100%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 15 90% 60%;
+    --gradient-warm: linear-gradient(135deg, hsl(15 80% 55%) 0%, hsl(40 80% 55%) 100%);
+    --gradient-bg: linear-gradient(180deg, hsl(25 20% 10%) 0%, hsl(25 25% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(25 20% 16%) 0%, hsl(25 18% 12%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(15 90% 60% / 0.1) 0%, transparent 50%);
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 40px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(15 90% 60% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .emoji-display {
+    font-size: 4rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 8px hsl(0 0% 0% / 0.1));
+  }
+}
